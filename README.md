@@ -18,6 +18,19 @@ The project includes a technical report, a tutorial, a reusable module, automate
 *These are educational results, not procurement advice.*
 
 ## Repository structure ##
+```text
+SoftUni-Math_Concepts_for_Devs-Final_Project
+├── config/
+│   └── decision_problem.json       
+├── data/
+│   ├── DATA_DICTIONARY.md          
+│   └── fictional_suppliers.csv     
+├── notebooks/
+│   └── supplier_selection.ipynb               
+├── src/
+│   └── mcda.py                     
+└── README.md
+```
 
 ## Mathematics covered ##
 1. Decision matrices
