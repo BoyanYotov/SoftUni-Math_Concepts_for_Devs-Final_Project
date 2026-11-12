@@ -1,0 +1,27 @@
+{
+  "supplier_column": "Supplier",
+  "criteria": [
+    "Unit Price (EUR)",
+    "Delivery Time (days)",
+    "Quality Score (%)",
+    "On-Time Delivery (%)",
+    "Sustainability Score",
+    "Risk Score"
+  ],
+  "directions": {
+    "Unit Price (EUR)": "cost",
+    "Delivery Time (days)": "cost",
+    "Quality Score (%)": "benefit",
+    "On-Time Delivery (%)": "benefit",
+    "Sustainability Score": "benefit",
+    "Risk Score": "cost"
+  },
+  "baseline_weights": {
+    "Unit Price (EUR)": 0.25,
+    "Delivery Time (days)": 0.15,
+    "Quality Score (%)": 0.25,
+    "On-Time Delivery (%)": 0.15,
+    "Sustainability Score": 0.10,
+    "Risk Score": 0.10
+  }
+}
