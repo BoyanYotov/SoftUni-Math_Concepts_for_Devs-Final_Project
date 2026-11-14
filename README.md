@@ -26,7 +26,8 @@ SoftUni-Math_Concepts_for_Devs-Final_Project
 │   ├── DATA_DICTIONARY.md          
 │   └── fictional_suppliers.csv     
 ├── notebooks/
-│   └── supplier_selection.ipynb               
+│   └── supplier_selection.ipynb
+├── outputs/               
 ├── src/
 │   └── mcda.py                     
 └── README.md
