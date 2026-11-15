@@ -23,7 +23,6 @@ Under the baseline weights, **Borealis Industries** ranks first with a WSM score
 ├── src/__init__.py
 ├── src/mcda.py                        # Validated reusable MCDA functions
 ├── tests/test_mcda.py                 # Automated pytest suite
-├── SELF_ASSESSMENT.md
 ├── VALIDATION_REPORT.md
 └── requirements.txt
 ```
