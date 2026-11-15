@@ -1,61 +1,101 @@
-# Choosing the Best Supplier with Mathematics: Weighted Scoring, TOPSIS, and Sensitivity Analysis #
+# Choosing the Best Supplier with Mathematics: *Weighted Scoring, TOPSIS, and Sensitivity Analysis in Python*
 
-This project serves as the final submission for the *Math Concepts for Developers* course at *SoftUni*. It illustrates how a supplier selection problem can be transformed into a decision matrix, followed by normalization, weighting, and ranking using Python. 
+This project for the SoftUni *Math Concepts for Developers* course turns a fictional supplier-selection problem into an auditable multi-criteria decision analysis (MCDA). All suppliers and values are fictional; the results are educational and are not procurement advice.
 
-Please note that all supplier names and values presented are fictional.
+## Research question
 
-## Research question ##
-> How can normalization, weights, and distance from ideal solutions turn several conflicting supplier criteria into a transparent recommendation - and how stable is that recommendation when assumptions change?
+> How can normalization, weights, and distance from ideal solutions turn conflicting supplier criteria into a transparent recommendation, and how stable is that recommendation when assumptions change?
 
-## Main findings from the fictional dataset ##
-- **Weighted Sum Model (WSM):** Borealis Industries ranks first with a score of **0.7243**, narrowly ahead of Evergreen Manufacturing at **0.7182**.
-- **TOPSIS:** Borealis also ranks first; the complete baseline ordering is identical to WSM.
-- **Small baseline margin:** the WSM first-second gap is only **0.0061**, so the result should be treated as provisional.
-- **Scenario dependence:** a quality-and-reliability scenario and an equal-weight scenario select Evergreen.
-- **Price sensitivity:** the WSM winner changes from Evergreen to Borealis around a price weight of **0.23**, then to Falcon around **0.48** (0.01 grid resolution).
-- **Random-weight robustness:** across 5,000 reproducible near-baseline weight samples, Borealis wins **59.04%** of WSM runs and Evergreen wins **40.78%**. WSM and TOPSIS choose the same winner in **77.38%** of runs.
+## Main result
 
-*These are educational results, not procurement advice.*
+Under the baseline weights, **Borealis Industries** ranks first with a WSM score of **0.7243**, narrowly ahead of **Evergreen Manufacturing** at **0.7182**. TOPSIS gives the same complete baseline order. The small WSM margin (**0.0061**) and the sensitivity experiments show that the recommendation is provisional rather than universal.
 
-## Repository structure ##
+## Repository structure
+
 ```text
-SoftUni-Math_Concepts_for_Devs-Final_Project
-├── config/
-│   └── decision_problem.json                # Criteria, directions, and baseline weights       
-├── data/
-│   ├── DATA_DICTIONARY.md                   # Definitions, units, and assumption         
-│   └── fictional_suppliers.csv              # Six fictional suppliers and six criteria   
-├── notebooks/
-│   └── supplier_selection.ipynb             # Report and tutorial
-├── outputs/                                      
-├── src/
-│   ├── __init__.py
-│   └── mcda.py                              # Validation, WSM, TOPSIS, sensitivity tool                    
-├── tests/
-│   └── test_mcda.py                         # Ten automated tests
-└── README.md
+├── config/decision_problem.json       # Criteria, directions, weights, valid ranges
+├── data/fictional_suppliers.csv       # Synthetic input data
+├── docs/DATA_DICTIONARY.md            # Units, meanings, assumptions, provenance
+├── notebooks/supplier_selection.ipynb # Complete executed mathematical analysis
+├── outputs/                           # Six notebook-generated result CSV files
+│   └── figures/                       # Optional rendered notebook figures
+├── scripts/verify_project.py          # Clean notebook execution helper
+├── src/__init__.py
+├── src/mcda.py                        # Validated reusable MCDA functions
+├── tests/test_mcda.py                 # Automated pytest suite
+├── SELF_ASSESSMENT.md
+├── VALIDATION_REPORT.md
+└── requirements.txt
 ```
 
-## Mathematics covered ##
-1. Decision matrices
-2. Cost and benefit criteria
-3. Direction-aware min-max normalization
-4. Weight constraints and weighted averages
-5. Vectors, dot products, and matrix-vector multiplication
-6. Weighted Sum Model
-7. Euclidean distance
-8. TOPSIS ideal and anti-ideal solutions
-9. Kendall rank correlation
-10. Scenario, one-way, random-weight, leave-one-criterion-out, and outlier sensitivity analysis
+## Methods
 
-## Limitations ##
-- Synthetic data cannot predict real supplier performance.
-- Weights are subjective and must be agreed before use.
-- WSM is compensatory; real sourcing often needs mandatory gates.
-- Correlated criteria can double-count performance.
-- Min-max normalization is sensitive to outliers and the comparison set.
-- TOPSIS and other relative methods can exhibit rank reversal.
-- The experiment varies preference weights but does not model measurement uncertainty.
-  
-## References ##
-*See Section **'References'** in the end of the notebook for full reference list.*
+- direction-aware min-max normalization for cost and benefit criteria;
+- Weighted Sum Model (WSM) as a matrix-vector product;
+- TOPSIS with vector normalization and ideal/anti-ideal distances;
+- scenario analysis;
+- one-way price-weight sensitivity;
+- 5,000-sample Monte Carlo weight-robustness analysis;
+- leave-one-criterion-out and outlier checks;
+- Kendall rank correlation and automated tests.
+
+## Reproduce the project
+
+### 1. Create and activate a virtual environment
+
+```bash
+python -m venv .venv
+# Windows PowerShell: .venv\Scripts\Activate.ps1
+# macOS/Linux:
+source .venv/bin/activate
+```
+
+### 2. Install dependencies
+
+```bash
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+The project was verified with Python 3.12. The bounded dependency ranges in `requirements.txt` permit compatible updates.
+
+### 3. Run the tests
+
+```bash
+python -m pytest -q
+```
+
+### 4. Run the notebook
+
+```bash
+jupyter notebook notebooks/supplier_selection.ipynb
+```
+
+In Jupyter, use **Kernel → Restart Kernel and Run All Cells**. The first code cell searches upward for the repository root, so the notebook works when launched from either the repository root or `notebooks/`.
+
+### 5. Regenerate outputs
+
+The final notebook cells write:
+
+- `outputs/baseline_rankings.csv`
+- `outputs/scenario_winners.csv`
+- `outputs/price_weight_transitions.csv`
+- `outputs/wsm_random_weight_summary.csv`
+- `outputs/topsis_random_weight_summary.csv`
+- `outputs/leave_one_criterion_out.csv`
+
+## Quality and reproducibility controls
+
+- unique supplier names, numeric finite values, criterion domain ranges, directions, and weights are validated;
+- all weights must be non-negative and sum to one;
+- the random-weight experiment uses seed `2026`;
+- the test suite covers normal and edge cases;
+- the notebook contains comments explaining imports, formulas, code purpose, and interpretation;
+- citations use a numbered IEEE-style format and trace methods to sources.
+
+## Academic integrity and AI assistance
+
+AI tools were used for language improvement, code suggestions, and review. The author reviewed, executed, and validated the submitted content, takes responsibility for it.
+
+## References
+See section *References* in the end of the notebook.
