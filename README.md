@@ -19,7 +19,6 @@ Under the baseline weights, **Borealis Industries** ranks first with a WSM score
 ├── notebooks/supplier_selection.ipynb # Complete executed mathematical analysis
 ├── outputs/                           # Six notebook-generated result CSV files
 │   └── figures/                       # Optional rendered notebook figures
-├── scripts/verify_project.py          # Clean notebook execution helper
 ├── src/__init__.py
 ├── src/mcda.py                        # Validated reusable MCDA functions
 ├── tests/test_mcda.py                 # Automated pytest suite
