@@ -21,15 +21,18 @@ Please note that all supplier names and values presented are fictional.
 ```text
 SoftUni-Math_Concepts_for_Devs-Final_Project
 ├── config/
-│   └── decision_problem.json       
+│   └── decision_problem.json                # Criteria, directions, and baseline weights       
 ├── data/
-│   ├── DATA_DICTIONARY.md          
-│   └── fictional_suppliers.csv     
+│   ├── DATA_DICTIONARY.md                   # Definitions, units, and assumption         
+│   └── fictional_suppliers.csv              # Six fictional suppliers and six criteria   
 ├── notebooks/
-│   └── supplier_selection.ipynb
-├── outputs/               
+│   └── supplier_selection.ipynb             # Report and tutorial
+├── outputs/                                      
 ├── src/
-│   └── mcda.py                     
+│   ├── __init__.py
+│   └── mcda.py                              # Validation, WSM, TOPSIS, sensitivity tool                    
+├── tests/
+│   └── test_mcda.py                         # Ten automated tests
 └── README.md
 ```
 
