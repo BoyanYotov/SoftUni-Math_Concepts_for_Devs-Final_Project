@@ -11,6 +11,7 @@ def validate_problem(
     criteria: Sequence[str],
     directions: Mapping[str, str],
     weights: Mapping[str, float],
+    valid_ranges: Mapping[str, tuple | list] | None = None,
 ) -> None:
     """Validate an MCDA decision problem and raise ``ValueError`` if invalid."""
     if not isinstance(data, pd.DataFrame) or data.empty:
