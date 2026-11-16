@@ -1,5 +1,3 @@
-"""Reusable mathematical functions for the supplier-selection project."""
-
 from .mcda import (
     minmax_normalize,
     one_way_sensitivity,
