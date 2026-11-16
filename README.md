@@ -73,8 +73,6 @@ In Jupyter, use **Kernel → Restart Kernel and Run All Cells**. The first code 
 
 ### 5. Regenerate outputs
 
-The final notebook cells write:
-
 - `outputs/baseline_rankings.csv`
 - `outputs/scenario_winners.csv`
 - `outputs/price_weight_transitions.csv`
@@ -84,7 +82,6 @@ The final notebook cells write:
 
 ## Quality and reproducibility controls
 
-- unique supplier names, numeric finite values, criterion domain ranges, directions, and weights are validated;
 - all weights must be non-negative and sum to one;
 - the random-weight experiment uses seed `2026`;
 - the test suite covers normal and edge cases;
