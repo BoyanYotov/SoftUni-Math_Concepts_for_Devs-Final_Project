@@ -1,6 +1,6 @@
 # Choosing the Best Supplier with Mathematics: *Weighted Scoring, TOPSIS, and Sensitivity Analysis in Python*
 
-This project for the SoftUni *Math Concepts for Developers* course turns a fictional supplier-selection problem into an auditable multi-criteria decision analysis (MCDA). All suppliers and values are fictional; the results are educational and are not procurement advice.
+This final project for the SoftUni *Math Concepts for Developers* course turns a fictional supplier-selection problem into an auditable multi-criteria decision analysis (MCDA). All suppliers and values are fictional; the results are educational and are not procurement advice.
 
 ## Research question
 
@@ -22,8 +22,8 @@ Under the baseline weights, **Borealis Industries** ranks first with a WSM score
 ├── src/__init__.py
 ├── src/mcda.py                        # Validated reusable MCDA functions
 ├── tests/test_mcda.py                 # Automated pytest suite
-├── VALIDATION_REPORT.md
-└── requirements.txt
+├── requirements.txt
+└── README.md
 ```
 
 ## Methods
