@@ -21,7 +21,33 @@
     "Delivery Time (days)": 0.15,
     "Quality Score (%)": 0.25,
     "On-Time Delivery (%)": 0.15,
-    "Sustainability Score": 0.10,
-    "Risk Score": 0.10
+    "Sustainability Score": 0.1,
+    "Risk Score": 0.1
+  },
+  "valid_ranges": {
+    "Unit Price (EUR)": [
+      0,
+      null
+    ],
+    "Delivery Time (days)": [
+      0,
+      null
+    ],
+    "Quality Score (%)": [
+      0,
+      100
+    ],
+    "On-Time Delivery (%)": [
+      0,
+      100
+    ],
+    "Sustainability Score": [
+      0,
+      100
+    ],
+    "Risk Score": [
+      1,
+      5
+    ]
   }
 }
